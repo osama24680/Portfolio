@@ -1,83 +1,106 @@
-.Testimonial_container{
-    width: 40%;
-}
-.client_avatar{
-    width: 6rem;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius:50%;
-    margin: 0 auto 1rem;
-    border:.4rem solid var(--colorBgVarient);
-}
-.Testimonial{
-    background:var(--colorBgVarient);
-    text-align:center;
-    padding: 2rem;
-    border-radius: 2rem;
-    user-select: none;
-}
-.client_review{
-    color:var(--colorLight);
-    font-weight:300;
-    display:block;
-    width: 80%;
-    margin: 0.8rem auto 0;
-    padding-bottom: 1rem;
+.testimonial_card {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 3.5rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(160deg, rgba(251, 191, 36, 0.06), rgba(44, 44, 108, 0.4) 45%, rgba(20, 20, 40, 0.6));
 }
 
-/* =================== Media Quiry (Medium) ================= */
-@media(max-width:1024px) {
-   .Testimonial_container{
-       width: 60%;
-   }
+.testimonial_mark {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 4.5rem;
+    color: rgba(251, 191, 36, 0.12);
+}
 
+.testimonial_stars {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #fbbf24;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4));
+}
+
+.testimonial_card blockquote {
+    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial_card figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding-top: 1.75rem;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.testimonial_avatar {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    font-weight: 600;
+    color: var(--colorBg);
+    background: linear-gradient(135deg, #fde68a, #f59e0b);
+    border-radius: 50%;
+}
+
+.testimonial_card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.testimonial_card small {
+    font-size: 0.78rem;
+    color: var(--colorLight);
+}
+
+.testimonial_source {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+}
+
+.testimonial_source svg {
+    color: #14a800;
+}
+
+.testimonial_source:hover {
+    color: #fff;
+    border-color: #14a800;
+    background: rgba(20, 168, 0, 0.1);
 }
 
 /* =================== Media Quiry (phones) ================= */
 @media(max-width:600px) {
-   .Testimonial_container{
-       width:var(--container_width_sm);
-   }
-   .client_review{
-       width:var(--container_width_sm);
-   }
+    .testimonial_card {
+        padding: 2.5rem 1.3rem 1.8rem;
+    }
+
+    .testimonial_card blockquote {
+        font-size: 1rem;
+    }
+
+    .testimonial_card figcaption {
+        flex-wrap: wrap;
+    }
+
+    .testimonial_source {
+        margin: 0.5rem auto 0;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

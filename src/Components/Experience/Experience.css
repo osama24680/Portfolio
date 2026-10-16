@@ -1,75 +1,332 @@
-.experience_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.experience_container>div {
-    background: var(--colorBgVarient);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    transition: .5s;
-    border: 1px solid var(--colorPrimaryVarient);
-
-}
-
-.experience_container>div:hover {
-    cursor: pointer;
-    border: 1px solid var(--colorPrimaryVarient);
-    background: transparent;
-}
-
-.experience_container>div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--colorPrimary);
-}
-
-.experience_content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-}
-
-.experience_details {
-    gap: 1rem;
+/* =========================================
+   MARQUEE
+========================================= */
+.skills_marquee {
     display: flex;
-    
-    
+    flex-direction: column;
+    gap: 14px;
+    margin: 3rem 0 3.5rem;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
 
-.experience_icon {
-    margin-top: 6px;
-    color: var(--colorPrimary);
+.marquee_row {
+    display: flex;
 }
 
+.marquee_track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    animation: marquee 45s linear infinite;
+}
 
+.marquee_row.reverse .marquee_track {
+    animation-direction: reverse;
+    animation-duration: 55s;
+}
+
+.skills_marquee:hover .marquee_track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee_chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.marquee_chip svg {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.45);
+    transition: var(--transition);
+}
+
+.marquee_chip:hover {
+    color: #fff;
+    border-color: color-mix(in srgb, var(--brand) 45%, transparent);
+}
+
+.marquee_chip:hover svg {
+    color: var(--brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee_track {
+        animation: none;
+    }
+}
+
+/* =========================================
+   BENTO GRID
+========================================= */
+.skills_bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "core core state"
+        "style tools beyond"
+        "venture venture venture";
+    gap: 1.25rem;
+}
+
+.bento_core { grid-area: core; }
+.bento_state { grid-area: state; }
+.bento_style { grid-area: style; }
+.bento_tools { grid-area: tools; }
+.bento_beyond { grid-area: beyond; }
+.bento_venture { grid-area: venture; }
+
+/* ---------- Card (look comes from .lux_card in index.css) ---------- */
+.bento_card {
+    padding: 2rem;
+}
+
+/* ---------- Card head ---------- */
+.bento_head {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.6rem;
+}
+
+.bento_number {
+    font-size: 2.2rem;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -1px;
+    background: linear-gradient(180deg, var(--colorPrimary), rgba(77, 181, 255, 0.15));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.bento_head h3 {
+    margin-bottom: 4px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.bento_head p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--colorLight);
+}
+
+/* ---------- Core tiles ---------- */
+.core_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.core_tile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.core_icon {
+    flex-shrink: 0;
+    font-size: 2.3rem;
+    color: var(--brand);
+    filter: drop-shadow(0 0 14px color-mix(in srgb, var(--brand) 35%, transparent));
+    transition: transform 0.4s ease;
+}
+
+.core_tile h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.core_tile small {
+    font-size: 0.75rem;
+    color: var(--colorLight);
+}
+
+.core_tile:hover {
+    background: color-mix(in srgb, var(--brand) 7%, transparent);
+    border-color: color-mix(in srgb, var(--brand) 35%, transparent);
+}
+
+.core_tile:hover .core_icon {
+    transform: scale(1.12) rotate(-6deg);
+}
+
+/* ---------- Skill chips ---------- */
+.skill_chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill_chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.skill_chip svg {
+    font-size: 0.95rem;
+    color: var(--brand);
+}
+
+.skill_chip:hover {
+    color: #fff;
+    background: color-mix(in srgb, var(--brand) 12%, transparent);
+    border-color: color-mix(in srgb, var(--brand) 50%, transparent);
+    transform: translateY(-2px);
+}
+
+/* ---------- Entrepreneurship card ---------- */
+.bento_venture {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    background: linear-gradient(160deg, rgba(251, 191, 36, 0.07), rgba(44, 44, 108, 0.4) 45%, rgba(20, 20, 40, 0.6));
+}
+
+.bento_venture .bento_number {
+    background: linear-gradient(180deg, #fbbf24, rgba(251, 191, 36, 0.15));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.bento_venture .bento_head strong {
+    color: #fff;
+}
+
+.bento_venture > * {
+    min-width: 0;
+}
+
+.venture_stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.venture_stat {
+    padding: 1.1rem 1rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(251, 191, 36, 0.15);
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.venture_stat:hover {
+    border-color: rgba(251, 191, 36, 0.45);
+    transform: translateY(-2px);
+}
+
+.venture_stat strong {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    background: linear-gradient(180deg, #fde68a, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.venture_stat small {
+    font-size: 0.72rem;
+    color: var(--colorLight);
+}
 
 /* =================== Media Quiry (Medium) ================= */
 @media(max-width:1024px) {
-    .experience_container {
-        grid-template-columns: 1fr;
+    .skills_bento {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "core core"
+            "state style"
+            "tools beyond"
+            "venture venture";
     }
-
-    .experience_container>div {
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-    .experience_content{
-        padding: 1rem;
-    }
-
 }
 
 /* =================== Media Quiry (phones) ================= */
 @media(max-width:600px) {
-    .experience_container {
-        gap:1rem
-    }
-    .experience_container >div{
-        width: 100%;
-        padding: 2rem 1rem;
+    .skills_marquee {
+        margin: 2rem 0 2.5rem;
     }
 
+    .skills_bento {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "core"
+            "state"
+            "style"
+            "tools"
+            "beyond"
+            "venture";
+        gap: 1rem;
+    }
+
+    .bento_card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .core_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento_venture {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+    }
+
+    .venture_stats {
+        gap: 0.6rem;
+    }
+
+    .venture_stat {
+        min-width: 0;
+        padding: 0.9rem 0.4rem;
+    }
+
+    .venture_stat small {
+        display: block;
+        font-size: 0.62rem;
+        line-height: 1.3;
+    }
+
+    .venture_stat strong {
+        font-size: 1.25rem;
+    }
+
+    .bento_number {
+        font-size: 1.8rem;
+    }
 }

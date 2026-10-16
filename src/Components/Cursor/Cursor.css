@@ -1,0 +1,60 @@
+.cursor_dot,
+.cursor_ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    will-change: transform;
+}
+
+/* only visible once the mouse is actually over the page */
+.cursor-active .cursor_dot,
+.cursor-active .cursor_ring {
+    opacity: 1;
+}
+
+.cursor_dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    background: var(--aqua);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(var(--aqua-rgb), 0.9);
+}
+
+/* the ring is positioned by JS; the inner span handles size changes,
+   so scaling never fights with the transform used for movement */
+.cursor_ring span {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border: 1px solid rgba(var(--violet-rgb), 0.7);
+    border-radius: 50%;
+    transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease,
+        border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.cursor_ring.is-hover span {
+    width: 46px;
+    height: 46px;
+    margin: -23px 0 0 -23px;
+    border-color: rgba(var(--aqua-rgb), 0.5);
+}
+
+.cursor_ring.is-strong span {
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border-color: rgba(var(--aqua-rgb), 0.85);
+    background-color: rgba(var(--violet-rgb), 0.08);
+}
+
+.cursor_ring.is-down span {
+    width: 26px;
+    height: 26px;
+    margin: -13px 0 0 -13px;
+}

@@ -1,73 +1,192 @@
-.services_container {
+/* ---------- Service cards ---------- */
+.services_grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
 }
 
-.service {
-    background: var(--colorBgVarient);
-    border-radius: 0 0 2rem 2rem;
-    border: 1px solid var(--colorPrimary);
-    height: fit-content;
-    transition: .3s;
-}
-
-.service:hover {
-    background: transparent;
-    border: 1px solid var(--colorPrimaryVarient);
-    cursor: pointer;
-}
-
-.service_head {
-    background: var(--colorPrimary);
-    padding: 2rem;
-    border-radius: 0 0 2rem 2rem;
-    box-shadow: 0 2rem 1rem rgba(0, 0, 0, .1);
-}
-
-.service_head h3 {
-    color: var(--colorBg);
-    font-size: 1rem;
-    text-align: center;
-}
-
-.service_list {
-    padding: 2rem;
-}
-
-.service_list li {
+.service_card {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 0.8rem;
+    flex-direction: column;
+    padding: 2rem;
 }
 
-.service_list p {
-    font-size: .9rem;
+.service_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+}
+
+.service_number {
+    font-size: 2.6rem;
+    font-weight: 200;
+    line-height: 1;
+    letter-spacing: -1px;
+    background: linear-gradient(180deg, var(--colorPrimary), rgba(77, 181, 255, 0.15));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .service_icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
     color: var(--colorPrimary);
+    background: rgba(77, 181, 255, 0.08);
+    border: 1px solid rgba(77, 181, 255, 0.2);
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
 
+.service_card:hover .service_icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.service_card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.service_caption {
+    margin-bottom: 1.3rem;
+    font-size: 0.85rem;
+    color: var(--colorLight);
+}
+
+.service_points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.service_points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.service_points svg {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--colorPrimary);
+}
+
+.service_link {
+    align-self: flex-start;
+    margin-top: 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ---------- Gold variant ---------- */
+.service_card.gold .service_number {
+    background: linear-gradient(180deg, #fbbf24, rgba(251, 191, 36, 0.15));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.service_card.gold .service_icon {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(251, 191, 36, 0.25);
+}
+
+.service_card.gold .service_points svg,
+.service_card.gold .service_link {
+    color: #fbbf24;
+}
+
+/* ---------- Process ---------- */
+.process {
+    margin-top: 1.25rem;
+    padding: 2rem 2.5rem 2.5rem;
+}
+
+.process_steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* the line connecting the steps */
+.process_steps::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    right: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--colorPrimary), rgba(77, 181, 255, 0.1));
+}
+
+.process_steps li {
+    position: relative;
+}
+
+.process_dot {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--colorPrimary);
+    background: var(--colorBg);
+    border: 1px solid var(--colorPrimary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(77, 181, 255, 0.1);
+}
+
+.process_steps h4 {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.process_steps p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--colorLight);
 }
 
 /* =================== Media Quiry (Medium) ================= */
 @media(max-width:1024px) {
-    .services_container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+    .process_steps {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .service {
-        height: auto
+    .process_steps::before {
+        display: none;
     }
-
 }
 
 /* =================== Media Quiry (phones) ================= */
 @media(max-width:600px) {
-    .services_container {
+    .services_grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem
+        gap: 1rem;
     }
 
+    .service_card {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .process {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .process_steps {
+        grid-template-columns: 1fr;
+    }
 }

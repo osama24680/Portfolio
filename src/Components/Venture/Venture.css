@@ -1,0 +1,691 @@
+.venture_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.venture_eyebrow {
+    display: block;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(var(--aqua-rgb), 0.8);
+}
+
+.venture_block {
+    padding: 2rem 2.2rem;
+}
+
+/* =================== Intro ================= */
+.venture_intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
+    background:
+        radial-gradient(60% 80% at 85% 50%, rgba(var(--violet-rgb), 0.18), transparent 70%),
+        linear-gradient(160deg, rgba(44, 44, 108, 0.45), rgba(20, 20, 40, 0.6));
+}
+
+.venture_role {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 50px;
+}
+
+.venture_name {
+    margin: 1rem 0 0.2rem;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    background: var(--grad-signature);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.venture_tagline {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.venture_pitch {
+    max-width: 520px;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    color: var(--colorLight);
+}
+
+.venture_badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+}
+
+.venture_badge {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.1rem;
+    border-radius: 14px;
+}
+
+.venture_badge strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.venture_badge small {
+    font-size: 0.72rem;
+    color: var(--colorLight);
+}
+
+.venture_badge.violet {
+    background: rgba(var(--violet-rgb), 0.1);
+    border: 1px solid rgba(var(--violet-rgb), 0.35);
+}
+
+.venture_badge.violet strong {
+    color: var(--violet-soft);
+}
+
+.venture_badge.gold {
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.venture_badge.gold strong {
+    color: #fbbf24;
+}
+
+/* product + live monitor */
+.venture_visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 360px;
+}
+
+.venture_glow {
+    position: absolute;
+    width: 75%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--aqua-rgb), 0.35), rgba(var(--violet-rgb), 0.2) 45%, transparent 70%);
+    filter: blur(30px);
+    animation: venture_pulse 3s ease-in-out infinite;
+}
+
+@keyframes venture_pulse {
+    50% {
+        transform: scale(1.08);
+        opacity: 0.8;
+    }
+}
+
+/* =================== Problem ================= */
+.venture_problem {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.venture_problem_text {
+    padding: 2rem;
+}
+
+.venture_problem_text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.venture_stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.6rem;
+    --lux-accent: 248, 113, 113;
+}
+
+.venture_stat strong {
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    background: linear-gradient(180deg, #fca5a5, #ef4444);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.venture_stat small {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--colorLight);
+}
+
+/* =================== Pipeline ================= */
+.venture_pipeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* the data flowing between stages */
+.venture_pipeline::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--aqua) 0 10px, transparent 10px 20px);
+    background-size: 40px 2px;
+    opacity: 0.6;
+    animation: data_flow 1s linear infinite;
+}
+
+@keyframes data_flow {
+    to {
+        background-position: 40px 0;
+    }
+}
+
+.venture_pipeline li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.pipeline_icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.6rem;
+    font-size: 1.25rem;
+    color: var(--aqua);
+    background: var(--colorBg);
+    border: 1px solid rgba(var(--aqua-rgb), 0.45);
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(var(--aqua-rgb), 0.2);
+}
+
+.pipeline_step {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--violet-soft);
+}
+
+.venture_pipeline h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.venture_pipeline p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--colorLight);
+}
+
+.pipeline_metric {
+    align-self: flex-start;
+    margin-top: 0.3rem;
+    padding: 3px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--aqua);
+    background: rgba(var(--aqua-rgb), 0.08);
+    border: 1px solid rgba(var(--aqua-rgb), 0.3);
+    border-radius: 20px;
+}
+
+/* =================== Traction + design ================= */
+.venture_split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 1.25rem;
+}
+
+.venture_timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-left: 1.4rem;
+}
+
+.venture_timeline::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 4px;
+    width: 2px;
+    background: linear-gradient(var(--aqua), var(--violet), rgba(var(--violet-rgb), 0.1));
+}
+
+.venture_timeline li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 0.8rem;
+}
+
+.venture_timeline li::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -1.4rem;
+    width: 10px;
+    height: 10px;
+    background: var(--colorBg);
+    border: 2px solid var(--aqua);
+    border-radius: 50%;
+}
+
+.venture_timeline li.highlight::before {
+    border-color: #fbbf24;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+.venture_timeline li.upcoming::before {
+    border-style: dashed;
+    border-color: var(--violet-soft);
+}
+
+.timeline_date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: rgba(var(--aqua-rgb), 0.8);
+}
+
+.venture_timeline h4 {
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.venture_timeline li.highlight h4 {
+    color: #fbbf24;
+}
+
+.venture_timeline li.upcoming h4 {
+    color: var(--violet-soft);
+}
+
+.venture_timeline p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--colorLight);
+}
+
+.venture_design {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.venture_design p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--colorLight);
+}
+
+.venture_design b {
+    color: #fff;
+}
+
+/* =================== Market ================= */
+.venture_market {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.market_tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1rem;
+}
+
+.market_tile strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--grad-signature);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.market_tile span {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.market_tile small {
+    font-size: 0.72rem;
+    color: var(--colorLight);
+}
+
+.venture_streams {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+}
+
+.venture_streams span {
+    margin-right: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--colorLight);
+}
+
+.venture_streams em {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-style: normal;
+    color: #fff;
+    background: rgba(var(--violet-rgb), 0.1);
+    border: 1px solid rgba(var(--violet-rgb), 0.3);
+    border-radius: 20px;
+}
+
+/* =================== Competition table ================= */
+.venture_table_wrap {
+    overflow-x: auto;
+}
+
+.venture_table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.85rem;
+}
+
+.venture_table th,
+.venture_table td {
+    padding: 0.85rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.venture_table thead th {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--colorLight);
+}
+
+.venture_table tbody th {
+    font-weight: 500;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.venture_table td {
+    color: var(--colorLight);
+}
+
+/* our column stands out */
+.venture_table .ours {
+    color: #fff;
+    background: linear-gradient(180deg, rgba(var(--aqua-rgb), 0.08), rgba(var(--violet-rgb), 0.08));
+}
+
+.venture_table thead .ours {
+    color: var(--aqua);
+    border-radius: 12px 12px 0 0;
+}
+
+.venture_table .yes {
+    font-size: 1.1rem;
+    color: #4ade80;
+}
+
+.venture_table .no {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* =================== Team ================= */
+.venture_team {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.team_member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1.4rem 0.8rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1rem;
+}
+
+.team_member.lead {
+    background: linear-gradient(180deg, rgba(var(--aqua-rgb), 0.1), rgba(var(--violet-rgb), 0.08));
+    border-color: rgba(var(--aqua-rgb), 0.35);
+}
+
+.team_avatar {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
+
+.team_member.lead .team_avatar {
+    color: var(--colorBg);
+    background: var(--grad-signature);
+    border: none;
+}
+
+.team_member h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.team_role {
+    font-size: 0.75rem;
+    color: var(--aqua);
+}
+
+.team_member small {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--colorLight);
+}
+
+.venture_supervisors {
+    margin-top: 1.2rem;
+    font-size: 0.78rem;
+    text-align: center;
+    color: var(--colorLight);
+}
+
+/* =================== CTA ================= */
+.venture_cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2rem 2.4rem;
+    background: linear-gradient(120deg, rgba(251, 191, 36, 0.1), rgba(44, 44, 108, 0.4) 50%, rgba(20, 20, 40, 0.6));
+}
+
+.venture_cta h3 {
+    margin-bottom: 4px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.venture_cta p {
+    font-size: 0.88rem;
+    color: var(--colorLight);
+}
+
+.venture_cta_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding: 0.9rem 1.6rem;
+    font-weight: 500;
+    color: #1f1f38;
+    background: linear-gradient(135deg, #fde68a, #f59e0b);
+    border-radius: 50px;
+}
+
+.venture_cta_btn:hover {
+    color: #1f1f38;
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+    transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .venture_glow,
+    .venture_pipeline::before,
+    .sv_upper,
+    .sv_sole,
+    .sv_beam,
+    .sv_ping,
+    .sv_link,
+    .bp_dot,
+    .venture_banner_icon,
+    .venture_open .venture_wrap>* {
+        animation: none;
+    }
+
+    .sv_stripe {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* =================== Media Quiry (Medium) ================= */
+@media(max-width:1024px) {
+
+    .venture_intro,
+    .venture_split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .venture_problem {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .venture_problem_text {
+        grid-column: span 2;
+    }
+
+    .venture_pipeline,
+    .venture_market {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .venture_pipeline::before {
+        display: none;
+    }
+
+    .venture_team {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =================== Media Quiry (phones) ================= */
+@media(max-width:600px) {
+
+    .venture_intro,
+    .venture_block,
+    .venture_problem_text,
+    .venture_design {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .venture_problem {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .venture_problem_text {
+        grid-column: auto;
+    }
+
+    .venture_pipeline,
+    .venture_market {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .venture_team {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .venture_visual {
+        min-height: 300px;
+    }
+
+    .venture_cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.6rem 1.3rem;
+    }
+
+    .venture_cta_actions {
+        align-self: stretch;
+        flex-direction: column;
+    }
+
+    .venture_cta_btn,
+    .venture_close {
+        align-self: stretch;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .venture_banner {
+        flex-wrap: wrap;
+        padding: 1.2rem;
+    }
+
+    .venture_banner_cta {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+}

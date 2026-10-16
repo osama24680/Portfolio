@@ -1,0 +1,221 @@
+/* ---------- Filters ---------- */
+.project_filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.project_filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px 8px 18px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.project_filter span {
+    min-width: 24px;
+    padding: 2px 7px;
+    font-size: 0.68rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+}
+
+.project_filter.active span {
+    background: rgba(31, 31, 56, 0.2);
+}
+
+.project_filter:hover {
+    color: #fff;
+    border-color: var(--colorPrimaryVarient);
+}
+
+.project_filter.active {
+    color: var(--colorBg);
+    background: var(--grad-signature);
+    border-color: transparent;
+}
+
+/* ---------- Grid ---------- */
+.projects_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.project_card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* featured projects get a wide, side-by-side layout */
+.project_card.featured {
+    grid-column: span 3;
+    flex-direction: row;
+}
+
+.project_card.featured .project_cover {
+    flex: 1.3;
+    aspect-ratio: auto;
+    min-height: 320px;
+}
+
+.project_card.featured .project_body {
+    flex: 1;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+.project_card.featured h3 {
+    font-size: 1.6rem;
+}
+
+/* ---------- Cover ---------- */
+.project_cover {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.project_cover img {
+    height: 100%;
+    transition: transform 0.7s ease;
+}
+
+.project_card:hover .project_cover img {
+    transform: scale(1.06);
+}
+
+.project_cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(20, 20, 40, 0.7));
+}
+
+.project_index {
+    position: absolute;
+    z-index: 1;
+    top: 14px;
+    left: 16px;
+    font-size: 1.6rem;
+    font-weight: 200;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Body ---------- */
+.project_body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.8rem;
+    padding: 1.5rem;
+}
+
+.project_body h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.project_body p {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--colorLight);
+}
+
+.project_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project_tags span {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    color: var(--colorPrimary);
+    border: 1px solid var(--colorPrimaryVarient);
+    border-radius: 20px;
+}
+
+.project_links {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.4rem;
+}
+
+.project_links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.project_live {
+    color: var(--colorBg);
+    background: var(--grad-signature);
+}
+
+.project_live:hover {
+    color: var(--colorBg);
+    box-shadow: 0 0 20px rgba(var(--aqua-rgb), 0.4), 0 0 36px rgba(var(--violet-rgb), 0.35);
+}
+
+.project_code {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.project_code:hover {
+    border-color: #fff;
+}
+
+/* =================== Media Quiry (Medium) ================= */
+@media(max-width:1024px) {
+    .projects_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project_card.featured {
+        grid-column: span 2;
+    }
+}
+
+/* =================== Media Quiry (phones) ================= */
+@media(max-width:600px) {
+    .projects_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project_card.featured {
+        grid-column: auto;
+        flex-direction: column;
+    }
+
+    .project_card.featured .project_cover {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    .project_card.featured .project_body {
+        padding: 1.5rem;
+    }
+
+    .project_card.featured h3 {
+        font-size: 1.2rem;
+    }
+}

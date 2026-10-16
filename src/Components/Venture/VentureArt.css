@@ -1,0 +1,274 @@
+/* Collapsed banner, the two SVG illustrations, and the unfold animation. */
+
+/* =================== Collapsed banner ================= */
+.venture_collapsed {
+    margin-top: 5rem;
+}
+
+.venture_banner {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    width: 100%;
+    padding: 1.4rem 1.8rem;
+    font-family: inherit;
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+    background:
+        radial-gradient(40% 120% at 0% 50%, rgba(251, 191, 36, 0.14), transparent 70%),
+        linear-gradient(120deg, rgba(44, 44, 108, 0.5), rgba(20, 20, 40, 0.7));
+}
+
+.venture_banner:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35), 0 0 40px rgba(251, 191, 36, 0.12);
+}
+
+.venture_banner_icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+    color: #1f1f38;
+    background: linear-gradient(135deg, #fde68a, #f59e0b);
+    border-radius: 16px;
+    box-shadow: 0 0 24px rgba(251, 191, 36, 0.45);
+    animation: banner_pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes banner_pulse {
+    50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.7); }
+}
+
+.venture_banner_text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.venture_banner_text small {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fbbf24;
+}
+
+.venture_banner_text strong {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.venture_banner_text em {
+    font-size: 0.78rem;
+    font-style: normal;
+    color: var(--colorLight);
+}
+
+.venture_banner_cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-left: auto;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1f1f38;
+    background: linear-gradient(135deg, #fde68a, #f59e0b);
+    border-radius: 50px;
+}
+
+.venture_banner:hover .venture_banner_cta svg {
+    animation: banner_nudge 0.8s ease-in-out infinite;
+}
+
+@keyframes banner_nudge {
+    50% { transform: translateY(3px); }
+}
+
+/* the case study unfolds card by card when opened */
+.venture_open .venture_wrap > * {
+    animation: venture_unfold 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.venture_open .venture_wrap > *:nth-child(2) { animation-delay: 0.08s; }
+.venture_open .venture_wrap > *:nth-child(3) { animation-delay: 0.16s; }
+.venture_open .venture_wrap > *:nth-child(4) { animation-delay: 0.24s; }
+
+@keyframes venture_unfold {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: none; }
+}
+
+.venture_cta_actions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+.venture_close {
+    padding: 0.85rem 1.3rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+}
+
+.venture_close:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* =================== Shoe illustration ================= */
+.shoe_visual {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.sv_upper,
+.sv_sole {
+    animation: sv_float 6s ease-in-out infinite;
+}
+
+@keyframes sv_float {
+    50% { transform: translateY(-4px); }
+}
+
+/* the signature stripe draws itself once */
+.sv_stripe {
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    animation: sv_draw 2.4s 0.3s ease forwards;
+}
+
+@keyframes sv_draw {
+    to { stroke-dashoffset: 0; }
+}
+
+/* a light beam sweeping across, like a scanner */
+.sv_beam {
+    filter: blur(3px);
+    animation: sv_scan 4s ease-in-out infinite;
+}
+
+@keyframes sv_scan {
+    0% { transform: translateX(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateX(480px); opacity: 0; }
+}
+
+.sv_ping {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sv_ping 2s ease-out infinite;
+}
+
+.sv_sensor:nth-child(odd) .sv_ping {
+    animation-delay: -1s;
+}
+
+@keyframes sv_ping {
+    from { transform: scale(1); opacity: 0.7; }
+    to { transform: scale(4); opacity: 0; }
+}
+
+/* data streaming from each sensor to its readout */
+.sv_link {
+    fill: none;
+    stroke-width: 1.2;
+    stroke-dasharray: 4 6;
+    opacity: 0.7;
+    animation: sv_stream 1s linear infinite;
+}
+
+@keyframes sv_stream {
+    to { stroke-dashoffset: -20; }
+}
+
+.sv_tag {
+    fill: rgba(15, 15, 32, 0.85);
+    stroke-width: 1;
+    stroke-opacity: 0.6;
+}
+
+.sv_tag_label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    fill: rgba(255, 255, 255, 0.55);
+}
+
+.sv_tag_value {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sv_tiny {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+/* =================== Sole blueprint ================= */
+.sole_blueprint {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    background: rgba(10, 10, 26, 0.5);
+    border: 1px solid rgba(var(--aqua-rgb), 0.2);
+    border-radius: 1rem;
+}
+
+/* layers drift apart when the card is hovered, like an exploded view */
+.bp_layer {
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.venture_design:hover .bp_layer {
+    transform: translateY(calc((var(--i) - 1.5) * 6px));
+}
+
+.bp_dot {
+    animation: bp_blink 2s ease-in-out infinite;
+}
+
+@keyframes bp_blink {
+    50% { opacity: 0.35; }
+}
+
+.bp_label {
+    font-size: 12px;
+    font-weight: 600;
+    fill: #fff;
+}
+
+.bp_note {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+.bp_dim line {
+    stroke: rgba(var(--aqua-rgb), 0.6);
+}
+
+.bp_dim text {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    fill: rgba(var(--aqua-rgb), 0.7);
+}

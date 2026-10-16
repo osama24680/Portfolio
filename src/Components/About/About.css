@@ -1,56 +1,42 @@
 .about_container {
     display: grid;
-    grid-template-columns: 35% 50%;
-    gap: 15%
+    grid-template-columns: minmax(280px, 32%) 1fr;
+    gap: 3rem;
 }
-
-.about_me {
-    width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-
-    display: grid;
-    place-items: center;
-    background: rgb(30, 196, 206);
-    background: linear-gradient(45deg, rgba(30, 196, 206, 0.3755252100840336) 0%, rgba(77, 181, 255, 0.9721638655462185) 35%, rgba(0, 212, 255, 0.9805672268907563) 100%);
-
-}
-
-.about_me_img {
-
-    overflow: hidden;
-    transform: rotate(10deg);
-    transition: var(--transition);
-
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-}
-
-.about_me_img:hover {
-    transform: rotate(0);
-}
-
 
 .about_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
 .about_card {
-    background: var(--colorBgVarient);
-    border: solid 1px transparent;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.5rem 1rem;
     text-align: center;
-    transition: var(--transition)
+    cursor: pointer;
 }
 
-.about_card:hover {
-    background: transparent;
-    border-color: var(--colorPrimaryVarient);
-    cursor: pointer;
+.about_card h5,
+.about_card .about_icon {
+    transition: var(--transition);
+}
+
+.about_card.active {
+    background: linear-gradient(160deg, rgba(77, 181, 255, 0.22), rgba(20, 20, 40, 0.6));
+    box-shadow: 0 20px 50px rgba(77, 181, 255, 0.15);
+}
+
+.about_card.active::after {
+    opacity: 1;
+}
+
+.about_card.active h5 {
+    color: var(--colorPrimary);
+}
+
+.about_card.active .about_icon {
+    transform: scale(1.15);
 }
 
 .about_card h5 {
@@ -68,8 +54,10 @@
     margin-bottom: 1rem;
 }
 
+
+
 .about_content p {
-    margin: 2rem 0 2.6rem;
+    /* margin: 2rem 0 2.6rem; */
     color: var(--colorLight);
 
 }
@@ -82,11 +70,8 @@
         grid-template-columns: 1fr;
         gap: 0;
     }
-    .about_me{
-        width: 50%;
-        margin: 2rem auto 4rem;
-    }
-    .about_content p{
+
+    .about_content p {
         margin: 1rem 1.5rem;
     }
 
@@ -94,19 +79,653 @@
 
 /* =================== Media Quiry (phones) ================= */
 @media(max-width:600px) {
-    .about_me{
-        width: 65%;
-        margin: 0 auto 3rem;
+    .about_cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
     }
-    .about_cards{
-        grid-template-columns: 1fr 1fr ;
-        gap:1rem;
-         
-    }
-    .about_content{
+
+    .about_content {
         text-align: center;
     }
-    .about_content p{
+
+    .about_content p {
         margin: 1.5rem 0;
     }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* =========================================
+   ABOUT DESCRIPTION
+========================================= */
+
+.about-description {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+
+    margin: 35px auto 0;
+
+
+    padding: 40px;
+
+
+    border-radius: 24px;
+
+
+    color: #ffffff;
+
+
+    line-height: 1.7;
+}
+
+
+
+
+/* =========================================
+   GENERAL TEXT
+========================================= */
+
+.about-description p {
+
+    margin: 0 0 16px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+
+}
+
+
+.highlight {
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   ABOUT INTRO
+========================================= */
+
+.about-intro {
+
+    margin-bottom: 35px;
+
+}
+
+
+.about-label {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    color: #4db5ff;
+
+}
+
+
+.about-intro h3 {
+
+    margin: 0 0 15px;
+
+    font-size: 1.65rem;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.section-heading h4 {
+
+    margin: 0;
+
+    font-size: 1.15rem;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+.section-icon {
+
+    font-size: 1.15rem;
+
+}
+
+
+/* =========================================
+   PROFESSIONAL EXPERIENCE
+========================================= */
+
+.featured-experience {
+
+    margin-top: 0;
+
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    background: rgba(77, 181, 255, 0.035);
+
+    border: 1px solid rgba(77, 181, 255, 0.14);
+
+    border-left: 3px solid #4db5ff;
+
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.featured-experience:hover {
+
+    background: rgba(77, 181, 255, 0.055);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   EXPERIENCE HEADER
+========================================= */
+
+.experience-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.experience-header h5 {
+
+    margin: 0 0 3px;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+.company-name {
+
+    color: #4db5ff;
+
+    font-size: 0.9rem;
+
+    font-weight: 500;
+
+}
+
+
+.experience-badge {
+
+    padding: 5px 10px;
+
+    border: 1px solid rgba(77, 181, 255, 0.2);
+
+    border-radius: 20px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 0.7rem;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   STARTUP / PROJECT
+========================================= */
+
+.about-project {
+
+    margin-bottom: 35px;
+
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-left: 3px solid #4db5ff;
+
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.about-project:hover {
+
+    background: rgba(255, 255, 255, 0.055);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   WHAT I BRING
+========================================= */
+
+.about-skills {
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   INDIVIDUAL SKILLS
+========================================= */
+
+.about-item {
+
+    position: relative;
+
+    margin-bottom: 22px;
+
+    padding-left: 18px;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: border-color 0.3s ease;
+
+}
+
+
+.about-item:hover {
+
+    border-left-color: #4db5ff;
+
+}
+
+
+.about-item:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   FEATURED FRONT-END
+========================================= */
+
+.featured-item {
+
+    padding: 20px;
+
+    background: rgba(77, 181, 255, 0.035);
+
+    border: 1px solid rgba(77, 181, 255, 0.12);
+
+    border-left: 3px solid #4db5ff;
+
+    border-radius: 12px;
+
+}
+
+
+/* =========================================
+   ITEM TITLE
+========================================= */
+
+.item-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.item-title span {
+
+    font-size: 1rem;
+
+}
+
+
+.item-title h5 {
+
+    margin: 0;
+
+    font-size: 0.98rem;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   SUPPORTING SKILLS
+========================================= */
+
+.supporting-skills {
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.supporting-intro {
+
+    max-width: 850px;
+
+    margin-bottom: 22px !important;
+
+    font-size: 0.9rem !important;
+
+}
+
+
+/* =========================================
+   SUPPORTING GRID
+========================================= */
+
+.supporting-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+
+/* =========================================
+   SUPPORTING CARDS
+========================================= */
+
+.supporting-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.supporting-item:hover {
+
+    background: rgba(255, 255, 255, 0.05);
+
+    transform: translateY(-2px);
+
+}
+
+
+.supporting-item>span {
+
+    font-size: 1.15rem;
+
+}
+
+
+.supporting-item h5 {
+
+    margin: 0 0 5px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+}
+
+
+.supporting-item p {
+
+    margin: 0;
+
+    font-size: 0.78rem !important;
+
+    line-height: 1.6 !important;
+
+}
+
+
+/* =========================================
+   PERSONALITY
+========================================= */
+
+.about-personality {
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.about-personality p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.about-connect {
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.about-connect p {
+
+    margin: 0;
+
+    color: #4db5ff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media screen and (max-width: 900px) {
+
+    .about-description {
+
+        padding: 30px;
+
+    }
+
+
+    .supporting-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .about-description {
+
+        margin-top: 25px;
+
+        padding: 24px 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .about-intro h3 {
+
+        font-size: 1.35rem;
+
+    }
+
+
+    .about-description p {
+
+        font-size: 0.88rem;
+
+        line-height: 1.7;
+
+    }
+
+
+    .about-project {
+
+        padding: 18px;
+
+    }
+
+
+    .featured-experience {
+
+        padding: 20px 16px;
+
+    }
+
+
+    .featured-item {
+
+        padding: 16px;
+
+    }
+
+
+    .about-item {
+
+        padding-left: 12px;
+
+    }
+
+
+    .section-heading h4 {
+
+        font-size: 1rem;
+
+    }
+
+
+    .supporting-item {
+
+        padding: 15px;
+
+    }
+
+
+    .experience-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    .experience-badge {
+
+        font-size: 0.65rem;
+
+    }
+
 }

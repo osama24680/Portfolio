@@ -1,0 +1,189 @@
+.about_side {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ---------- Code card ---------- */
+.code_card {
+    background: #161629;
+    border-radius: 1rem;
+}
+
+.code_card_bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.7rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code_card_bar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f57;
+}
+
+.dot.yellow {
+    background: #febc2e;
+}
+
+.dot.green {
+    background: #28c840;
+}
+
+.code_card_file {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--colorLight);
+    font-family: Consolas, "Courier New", monospace;
+}
+
+.code_card_body {
+    margin: 0;
+    padding: 1.1rem 1.2rem;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.tk_kw {
+    color: #c586c0;
+}
+
+.tk_var {
+    color: #4fc1ff;
+}
+
+.tk_key {
+    color: #9cdcfe;
+}
+
+.tk_str {
+    color: #ce9178;
+}
+
+/* ---------- Profile card ---------- */
+.profile_card {
+    padding: 1.4rem;
+    border-radius: 1rem;
+}
+
+.profile_status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 20px;
+}
+
+.pulse_dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+}
+
+.pulse_dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(2.6);
+        opacity: 0;
+    }
+}
+
+.profile_meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.82rem;
+    color: var(--colorLight);
+}
+
+.profile_meta li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile_meta svg {
+    flex-shrink: 0;
+    color: var(--colorPrimary);
+    font-size: 1rem;
+}
+
+.profile_stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1rem 0;
+    margin-bottom: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.profile_stats strong {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--colorPrimary);
+}
+
+.profile_stats small {
+    font-size: 0.65rem;
+    color: var(--colorLight);
+}
+
+.profile_cv {
+    display: block;
+    text-align: center;
+}
+
+
+/* =================== Media Quiry (Medium) ================= */
+@media(max-width:1024px) {
+    .about_side {
+        position: static;
+        width: 70%;
+        margin: 0 auto 3rem;
+    }
+}
+
+/* =================== Media Quiry (phones) ================= */
+@media(max-width:600px) {
+    .about_side {
+        width: 100%;
+    }
+}

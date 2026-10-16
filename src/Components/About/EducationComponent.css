@@ -1,0 +1,272 @@
+.education {
+    width: 100%;
+    margin: 35px auto 0;
+    padding: 40px;
+    text-align: left;
+    border-radius: 24px;
+}
+
+/* override the generic `.about_content p` margins */
+.about_content .education p {
+    margin: 0;
+}
+
+.education_intro {
+    margin-bottom: 28px;
+}
+
+.education_intro h3 {
+    margin: 0;
+    font-size: 1.65rem;
+    font-weight: 600;
+}
+
+/* ---------- Degree ---------- */
+.edu_degree {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    background: rgba(77, 181, 255, 0.04);
+    border: 1px solid rgba(77, 181, 255, 0.14);
+    border-left: 3px solid var(--colorPrimary);
+    border-radius: 14px;
+}
+
+.edu_degree_icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+    background: rgba(77, 181, 255, 0.1);
+    border-radius: 14px;
+}
+
+img.edu_degree_icon {
+    padding: 6px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.edu_degree_type {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--colorPrimary);
+}
+
+.edu_degree_body h4 {
+    margin: 4px 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.edu_period {
+    display: block;
+    margin-top: 2px;
+    font-size: 0.72rem;
+    color: var(--colorPrimary);
+}
+
+.edu_school {
+    font-size: 0.85rem;
+    color: var(--colorLight);
+}
+
+/* ---------- Graduation project ---------- */
+.edu_project {
+    padding: 24px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    transition: var(--transition);
+}
+
+.edu_project:hover {
+    background: rgba(255, 255, 255, 0.055);
+    transform: translateY(-2px);
+}
+
+.edu_project_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.edu_project_label {
+    font-size: 0.75rem;
+    color: var(--colorLight);
+}
+
+.edu_project_badge {
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.edu_project h4 {
+    margin: 0 0 8px;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.edu_project p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.edu_recognitions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.edu_recognition {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(251, 191, 36, 0.05);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 12px;
+}
+
+.edu_recognition_logo {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+
+img.edu_recognition_logo {
+    padding: 4px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.edu_recognition strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #fbbf24;
+}
+
+.edu_recognition small {
+    font-size: 0.72rem;
+    color: var(--colorLight);
+}
+
+.edu_chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.edu_chips span {
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    color: var(--colorPrimary);
+    border: 1px solid var(--colorPrimaryVarient);
+    border-radius: 20px;
+}
+
+/* ---------- Trainings ---------- */
+.edu_section_title {
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.edu_trainings_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.edu_training {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.edu_training:hover {
+    border-color: var(--colorPrimaryVarient);
+    transform: translateY(-2px);
+}
+
+.edu_training_icon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.edu_training h5 {
+    margin: 0 0 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.edu_training p {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: var(--colorLight);
+}
+
+/* =================== Media Quiry (Medium) ================= */
+@media(max-width:900px) {
+    .education {
+        padding: 30px;
+    }
+
+    .edu_trainings_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================== Media Quiry (phones) ================= */
+@media(max-width:600px) {
+    .education {
+        margin-top: 25px;
+        padding: 24px 18px;
+        border-radius: 18px;
+    }
+
+    .education_intro h3 {
+        font-size: 1.35rem;
+    }
+
+    .edu_degree {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+    .edu_project {
+        padding: 18px;
+    }
+
+    .edu_recognitions {
+        grid-template-columns: 1fr;
+    }
+}
