@@ -2,8 +2,11 @@
 // graduation decks, the AAST Rally 2024 submission, the business plan (Sep 2024),
 // the Business Model Canvas, and the production budget.
 
+// The startup was renamed from ShoesFit to Vectos; awards and milestones
+// below were earned under the original name, so they keep it.
 export const venture = {
-  name: "ShoesFit",
+  name: "Vectos",
+  formerly: "ShoesFit",
   tagline: "We are your private hospital.",
   pitch:
     "AI-powered smart shoes that monitor heart rate, blood oxygen, temperature, and movement — and use machine learning to flag health risks early, before they become emergencies.",
@@ -74,7 +77,7 @@ export const revenueStreams = ["Product sales", "Premium subscription", "Telemed
 
 // "Focus" and "key features" exactly as positioned in the pitch deck
 export const competitors = {
-  columns: ["ShoesFit", "Nike Adapt BB", "Under Armour HOVR", "IOFIT"],
+  columns: ["Vectos", "Nike Adapt BB", "Under Armour HOVR", "IOFIT"],
   rows: [
     { label: "Main focus", values: ["Health & disease prevention", "Lifestyle", "Runners", "Sports players"] },
     { label: "Heart-rate tracking", values: [true, true, false, false] },

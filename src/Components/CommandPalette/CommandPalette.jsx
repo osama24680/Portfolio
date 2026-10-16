@@ -16,7 +16,7 @@ const open = (url) => window.open(url, "_blank", "noopener,noreferrer");
 const buildCommands = (notify) => [
   { group: "Navigate", label: "Home", hint: "Top of the page", Icon: FiHome, run: () => scrollTo("header") },
   { group: "Navigate", label: "About", hint: "Me · Experience · Education", Icon: FiUser, run: () => scrollTo("about") },
-  { group: "Navigate", label: "The Venture — ShoesFit", hint: "Founder case study", Icon: FiZap, run: () => window.dispatchEvent(new Event("open-venture")) },
+  { group: "Navigate", label: "The Venture — Vectos (ShoesFit)", hint: "Founder case study", Icon: FiZap, run: () => window.dispatchEvent(new Event("open-venture")) },
   { group: "Navigate", label: "Skills & Toolkit", hint: "Stack and tools", Icon: FiCode, run: () => scrollTo("experience") },
   { group: "Navigate", label: "Projects", hint: "React & Next.js work", Icon: FiFolder, run: () => scrollTo("projects") },
   { group: "Navigate", label: "Services", hint: "What I offer", Icon: FiLayers, run: () => scrollTo("services") },

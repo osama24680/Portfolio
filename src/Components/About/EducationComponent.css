@@ -221,6 +221,17 @@ img.edu_recognition_logo {
     line-height: 1;
 }
 
+/* organisation logos sit on a white tile so any logo reads on the dark card */
+img.edu_training_icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 10px;
+}
+
 .edu_training h5 {
     margin: 0 0 4px;
     font-size: 0.9rem;
