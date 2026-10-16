@@ -5,9 +5,20 @@ import { FiArrowUpRight, FiSend } from "react-icons/fi";
 import { trackSpotlight } from "../../utils/spotlight";
 import "./Contact.css";
 
-// FormSubmit forwards form posts to this inbox — no account or API key needed.
-// The very first submission sends an "Activate Form" email; messages arrive after that.
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/osamamegahed2468@gmail.com";
+const OWNER_EMAIL = "osamamegahed2468@gmail.com";
+
+// Web3Forms delivers form posts to the inbox tied to this access key.
+// The key is public by design (it only allows sending *to* you), so it can live in the client.
+// Get one at https://web3forms.com — until it's set, the form falls back to the visitor's mail app.
+const WEB3FORMS_KEY = "01091d09-dcdb-4a06-87a1-4a5a1c6dfc8a";
+const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+
+// opens the visitor's email app with their message already filled in
+const openMailDraft = ({ name, email, message }) => {
+  const subject = encodeURIComponent(`Portfolio message from ${name}`);
+  const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+  window.location.href = `mailto:${OWNER_EMAIL}?subject=${subject}&body=${body}`;
+};
 
 const channels = [
   {
@@ -48,21 +59,28 @@ export default function Contact() {
       return;
     }
 
+    if (!WEB3FORMS_KEY) {
+      openMailDraft(data);
+      setStatus("drafted");
+      return;
+    }
+
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New portfolio message from ${data.name}`,
+          from_name: "Osama Megahed · Portfolio",
           name: data.name,
           email: data.email,
           message: data.message,
-          _subject: `New portfolio message from ${data.name}`,
-          _template: "table",
         }),
       });
       const result = await res.json();
-      if (!res.ok || String(result.success) !== "true") {
+      if (!res.ok || !result.success) {
         throw new Error(result.message);
       }
       setStatus("sent");
@@ -139,6 +157,12 @@ export default function Contact() {
 
           {status === "sent" && (
             <p className="form_status success">Thanks! Your message was sent — I'll get back to you soon.</p>
+          )}
+          {status === "drafted" && (
+            <p className="form_status success">
+              Your email app should open with the message ready — just hit send. Nothing opened? Email me at{" "}
+              <a href={`mailto:${OWNER_EMAIL}`}>{OWNER_EMAIL}</a>.
+            </p>
           )}
           {status === "error" && (
             <p className="form_status error">
