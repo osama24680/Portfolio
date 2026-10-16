@@ -91,10 +91,10 @@ const MeComponents = ({}: IProps) => {
         </p>
 
         <p>
-          I’m also exploring{" "}
-          <span className="highlight">Vectos</span>{" "}
-          and the challenges of turning technology into products with real users
-          and business value.
+          Today the project lives on as{" "}
+          <span className="highlight">Vectos</span> — I'm growing it into a
+          startup and working through the challenges of turning technology into
+          a product with real users and business value.
         </p>
       </div>
 

@@ -5,6 +5,11 @@ export const logos = {
   aast: "aast.png",
   rally: "rally.png",
   plan: "plan.png",
+  imperious: "Imperial.jpeg",
+  instant: "Instant.jpeg",
+  depi: "DEPI.jpeg",
+  route: "Route.jpeg",
+  ccna: "CCNA.jpeg",
 };
 
 export type LogoKey = keyof typeof logos;

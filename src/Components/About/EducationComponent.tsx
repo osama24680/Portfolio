@@ -1,5 +1,5 @@
 import "./EducationComponent.css";
-import OrgLogo from "./OrgLogo";
+import OrgLogo, { LogoKey } from "./OrgLogo";
 
 import { trackSpotlight } from "../../utils/spotlight";
 
@@ -7,6 +7,7 @@ interface IProps {}
 
 interface ITraining {
   icon: string;
+  logo?: LogoKey;
   title: string;
   period?: string;
   description: string;
@@ -14,32 +15,37 @@ interface ITraining {
 
 const trainings: ITraining[] = [
   {
-    icon: "📊",
-    title: "DEPI — Data Science",
-    period: "Apr – Oct 2024",
-    description: "Python, EDA, and Machine Learning through multiple projects.",
-  },
-  {
     icon: "🤖",
+    logo: "imperious",
     title: "AI Intern — Imperious University of America",
     period: "Jul 2024 – Feb 2025",
-    description:
-      "Python, data analysis, data science, ML, and deep learning.",
+    description: "Python, data analysis, data science, ML, and deep learning.",
   },
   {
     icon: "🧪",
+    logo: "instant",
     title: "AI Diploma — Instant Software Solutions",
     period: "Aug 2024 – Jan 2025",
     description: "Data Science, Machine Learning, and Deep Learning.",
   },
   {
+    icon: "📊",
+    logo: "depi",
+    title: "DEPI — Data Science",
+    period: "Apr – Oct 2024",
+    description: "Python, EDA, and Machine Learning through multiple projects.",
+  },
+
+  {
     icon: "⚛️",
+    logo: "route",
     title: "Front-End Diploma — Route",
     period: "Feb – Jun 2021",
     description: "Front-End development with React.js.",
   },
   {
     icon: "🌐",
+    logo: "ccna",
     title: "CCNA",
     description: "Networking fundamentals, routing, and switching.",
   },
@@ -78,14 +84,22 @@ const EducationComponent = ({}: IProps) => {
         </p>
         <div className="edu_recognitions">
           <div className="edu_recognition">
-            <OrgLogo logo="plan" fallback="🚀" className="edu_recognition_logo" />
+            <OrgLogo
+              logo="plan"
+              fallback="🚀"
+              className="edu_recognition_logo"
+            />
             <div>
               <strong>Top 10 · $1,000</strong>
               <small>Plan International</small>
             </div>
           </div>
           <div className="edu_recognition">
-            <OrgLogo logo="rally" fallback="🏆" className="edu_recognition_logo" />
+            <OrgLogo
+              logo="rally"
+              fallback="🏆"
+              className="edu_recognition_logo"
+            />
             <div>
               <strong>7th place</strong>
               <small>Rally Competition</small>
@@ -100,28 +114,14 @@ const EducationComponent = ({}: IProps) => {
         </div>
       </article>
 
-      <article className="edu_project">
-        <div className="edu_project_head">
-          <span className="edu_project_label">DEPI Graduation Project</span>
-        </div>
-        <h4>Stroke Risk Prediction</h4>
-        <p>
-          A team project analyzing the key factors and probabilities behind
-          stroke risk, turning health data into insights on a critical issue.
-        </p>
-        <div className="edu_chips">
-          <span>Python</span>
-          <span>EDA</span>
-          <span>Machine Learning</span>
-        </div>
-      </article>
-
       <div className="edu_trainings">
-        <h4 className="edu_section_title">Diplomas, Training &amp; Internships</h4>
+        <h4 className="edu_section_title">
+          Diplomas, Training &amp; Internships
+        </h4>
         <div className="edu_trainings_grid">
           {trainings.map((t) => (
             <div className="edu_training" key={t.title}>
-              <span className="edu_training_icon">{t.icon}</span>
+              <OrgLogo logo={t.logo} fallback={t.icon} className="edu_training_icon" />
               <div>
                 <h5>{t.title}</h5>
                 {t.period && <span className="edu_period">{t.period}</span>}

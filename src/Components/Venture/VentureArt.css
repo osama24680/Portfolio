@@ -5,6 +5,21 @@
     margin-top: 5rem;
 }
 
+/* the startup's previous name, kept visible since awards were won under it */
+.venture_formerly {
+    font-weight: 400;
+    color: var(--colorLight);
+}
+
+.venture_formerly_tag {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .venture_banner {
     display: flex;
     align-items: center;

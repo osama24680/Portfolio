@@ -65,7 +65,8 @@ export default function Venture() {
             <span className="venture_banner_text">
               <small>Founder story</small>
               <strong>
-                {venture.name} — AI smart shoes that flag health risks early
+                {venture.name} <span className="venture_formerly">(formerly {venture.formerly})</span> — AI smart
+                shoes that flag health risks early
               </strong>
               <em>7th · AAST Rally 2024 &nbsp;·&nbsp; Top 10 · Plan International &nbsp;·&nbsp; $1,000 funded</em>
             </span>
@@ -91,6 +92,7 @@ export default function Venture() {
               <FiAward /> {venture.role} · {venture.period}
             </span>
             <h3 className="venture_name">{venture.name}</h3>
+            <span className="venture_formerly_tag">formerly {venture.formerly}</span>
             <p className="venture_tagline">“{venture.tagline}”</p>
             <p className="venture_pitch">{venture.pitch}</p>
 

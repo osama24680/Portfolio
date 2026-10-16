@@ -221,9 +221,9 @@ export default function Experience() {
               <div>
                 <h3>Entrepreneurship &amp; Product</h3>
                 <p>
-                  I don't stop at the code. With <strong>ShoesFit</strong> I took
-                  an idea from concept to a funded product, and I'm now building{" "}
-                  <strong>Vectos</strong>.
+                  I don't stop at the code. With <strong>Vectos</strong>{" "}
+                  (formerly ShoesFit) I took an idea from concept to a funded
+                  product — and I'm growing it into a startup.
                 </p>
               </div>
             </div>
