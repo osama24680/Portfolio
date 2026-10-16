@@ -179,10 +179,35 @@ const filters = [
   { id: "Next", label: "Next.js" },
 ];
 
+// Walks the grid in order; each run of normal cards between featured (full-row) cards
+// is checked for leftovers: 1 left on the 3-col grid -> full row, 2 left -> split the row,
+// and 1 left on the 2-col (tablet) grid -> full row there.
+const getFillClasses = (list, featuredOn) => {
+  const classes = list.map(() => "");
+  let run = [];
+  const flush = () => {
+    const rem3 = run.length % 3;
+    const rem2 = run.length % 2;
+    if (rem3 === 1) classes[run[run.length - 1]] += " fill_wide";
+    if (rem3 === 2) run.slice(-2).forEach((idx) => (classes[idx] += " fill_half"));
+    if (rem2 === 1) classes[run[run.length - 1]] += " fill_wide_md";
+    run = [];
+  };
+  list.forEach((p, idx) => {
+    if (p.featured && featuredOn) flush();
+    else run.push(idx);
+  });
+  flush();
+  return classes;
+};
+
 export default function Projects() {
   const [filter, setFilter] = useState("All");
   const visible =
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
+
+  // cards that would sit alone (or as a pair) in the last row of a run stretch to fill it
+  const fillClass = getFillClasses(visible, filter === "All");
 
   return (
     <section id="projects">
@@ -213,7 +238,7 @@ export default function Projects() {
               key={project.title}
               className={`lux_card lux_lift project_card ${
                 project.featured && filter === "All" ? "featured" : ""
-              }`}
+              } ${fillClass[i]}`}
               onMouseMove={trackSpotlight}
             >
               <div className="project_cover">

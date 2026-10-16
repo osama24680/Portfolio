@@ -9,39 +9,28 @@ interface IJob {
   role: string;
   period: string;
   location: string;
-  type: "Front-End" | "AI & Data";
+  type: "Full-Time" | "Internship" | "Part-Time";
   points: string[];
 }
 
 const jobs: IJob[] = [
   {
-    company: "Imperious University of America",
-    role: "AI Intern",
-    period: "Jul 2024 – Feb 2025",
-    location: "Alexandria, Egypt",
-    type: "AI & Data",
+    company: "Ificra",
+    role: "Front-End Developer",
+    period: "Oct – Present",
+    location: "Alexandria",
+    type: "Internship",
     points: [
-      "Training in Python, data analysis, data science, ML, and deep learning.",
-      "Applied data science and ML concepts across multiple course projects.",
-    ],
-  },
-  {
-    company: "Digital Egypt Pioneers Initiative (DEPI)",
-    role: "Data Science Intern",
-    period: "Apr – Oct 2024",
-    location: "Alexandria, Egypt",
-    type: "AI & Data",
-    points: [
-      "Six months of intensive data science and ML with hands-on projects.",
-      "Graduation project: Stroke Risk Prediction — analyzing the key factors behind stroke risk.",
+      "Referred by a friend, then successfully passed the interview and technical assessment.",
+      "Solved real-world problems and delivered features as part of a professional team.",
     ],
   },
   {
     company: "Arabia IT",
     role: "Front-End Developer",
     period: "Sep – Nov 2023",
-    location: "Egypt",
-    type: "Front-End",
+    location: "Remotely",
+    type: "Full-Time",
     points: [
       "Recommended for the role by my mentor and team leader.",
       "Solved real problems and shipped features in a professional team.",
@@ -51,8 +40,8 @@ const jobs: IJob[] = [
     company: "SEEF",
     role: "Front-End Developer · Team Leader",
     period: "Jul – Sep 2023",
-    location: "Egypt",
-    type: "Front-End",
+    location: "Remotely",
+    type: "Internship",
     points: [
       "Chosen as team leader after a four-month Front-End track.",
       "Led a 12-person team of mixed levels to deliver a React.js mentorship website.",
@@ -65,7 +54,7 @@ const WorkExperienceComponent = ({}: IProps) => {
     <div className="work lux_card" onMouseMove={trackSpotlight}>
       <div className="work_intro">
         <span className="about-label">EXPERIENCE</span>
-        <h3>Where I've worked and learned.</h3>
+        <h3>Where I've Worked.</h3>
       </div>
 
       <ol className="work_timeline">
@@ -78,7 +67,7 @@ const WorkExperienceComponent = ({}: IProps) => {
               </div>
               <span
                 className={`work_type ${
-                  job.type === "Front-End" ? "frontend" : "ai"
+                  job.type === "Full-Time" ? "frontend" : "ai"
                 }`}
               >
                 {job.type}
