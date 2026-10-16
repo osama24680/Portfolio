@@ -46,8 +46,9 @@ const years: IYear[] = [
     activities: [
       {
         icon: "🧠",
+        logo: "acpc",
         title: "ACPC",
-        role: "Contestant — Arab Collegiate Programming Contest",
+        role: "Competitor — Arab Collegiate Programming Contest",
         tag: "Competition",
       },
     ],
@@ -58,6 +59,7 @@ const years: IYear[] = [
     activities: [
       {
         icon: "💻",
+        logo: "ieee",
         title: "IEEE AAST Student Branch",
         role: "Web Developer & Graphic Designer",
         tag: "Tech",
@@ -71,6 +73,7 @@ const years: IYear[] = [
       },
       {
         icon: "🌍",
+        logo: "upwork",
         title: "Upwork",
         role: "Joined as a freelancer",
         tag: "Freelance",
@@ -99,12 +102,14 @@ const years: IYear[] = [
       },
       {
         icon: "🤖",
-        title: "IEEE Alexandria Section",
+        logo: "ieeeAlex",
+        title: "IEEE Alexandria Student Branch",
         role: "Machine Learning Member",
         tag: "Tech",
       },
       {
         icon: "💼",
+        logo: "upwork",
         title: "Upwork",
         role: "Started working with clients",
         tag: "Freelance",
@@ -118,7 +123,7 @@ const VolunteeringComponent = ({}: IProps) => {
     <div className="volunteering lux_card" onMouseMove={trackSpotlight}>
       <div className="volunteering_intro">
         <span className="about-label">VOLUNTEERING & ACTIVITIES</span>
-        <h3>Beyond the classroom.</h3>
+        <h3>Beyond The Classroom.</h3>
         <p>
           Every year at university I pushed myself into something new — from
           writing and competitive programming to tech communities,
@@ -149,9 +154,7 @@ const VolunteeringComponent = ({}: IProps) => {
                     </div>
                     {a.role && <p>{a.role}</p>}
                     {a.achievement && (
-                      <span className="vol_achievement">
-                        ★ {a.achievement}
-                      </span>
+                      <span className="vol_achievement">★ {a.achievement}</span>
                     )}
                   </div>
                 </article>

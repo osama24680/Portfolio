@@ -31,7 +31,7 @@ const trainings: ITraining[] = [
   {
     icon: "📊",
     logo: "depi",
-    title: "DEPI — Data Science",
+    title: "Data Science — DEPI ",
     period: "Apr – Oct 2024",
     description: "Python, EDA, and Machine Learning through multiple projects.",
   },
@@ -56,7 +56,7 @@ const EducationComponent = ({}: IProps) => {
     <div className="education lux_card" onMouseMove={trackSpotlight}>
       <div className="education_intro">
         <span className="about-label">EDUCATION</span>
-        <h3>An engineer who builds for the web.</h3>
+        <h3>From Engineering to Digital Experiences.</h3>
       </div>
 
       <article className="edu_degree">
@@ -121,7 +121,11 @@ const EducationComponent = ({}: IProps) => {
         <div className="edu_trainings_grid">
           {trainings.map((t) => (
             <div className="edu_training" key={t.title}>
-              <OrgLogo logo={t.logo} fallback={t.icon} className="edu_training_icon" />
+              <OrgLogo
+                logo={t.logo}
+                fallback={t.icon}
+                className="edu_training_icon"
+              />
               <div>
                 <h5>{t.title}</h5>
                 {t.period && <span className="edu_period">{t.period}</span>}

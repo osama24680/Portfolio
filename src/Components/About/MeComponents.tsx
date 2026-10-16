@@ -13,10 +13,10 @@ const MeComponents = ({}: IProps) => {
         </h3>
 
         <p>
-          I’m a <span className="highlight">Front-End Developer</span>{" "}
-          who enjoys turning ideas into interactive, user-focused web
-          experiences. I care about writing clean code, building intuitive
-          interfaces, and creating products that solve real problems.
+          I’m a <span className="highlight">Front-End Developer</span> who
+          enjoys turning ideas into interactive, user-focused web experiences. I
+          care about writing clean code, building intuitive interfaces, and
+          creating products that solve real problems.
         </p>
 
         <p>
@@ -84,10 +84,9 @@ const MeComponents = ({}: IProps) => {
 
         <p>
           The project received{" "}
-          <span className="highlight">$1,000 in funding</span>{" "}
-          and gave me the opportunity to experience the journey of turning an
-          idea from a concept into a real product that people are willing to
-          support.
+          <span className="highlight">$1,000 in funding</span> and gave me the
+          opportunity to experience the journey of turning an idea from a
+          concept into a real product that people are willing to support.
         </p>
 
         <p>
@@ -127,21 +126,6 @@ const MeComponents = ({}: IProps) => {
           <div className="item-title">
             <span>🧩</span>
 
-            <h5>Real-World Projects</h5>
-          </div>
-
-          <p>
-            I’ve built an e-commerce application using Redux and a movie
-            platform integrating{" "}
-            <span className="highlight">10 TMDB endpoints</span>, including
-            authentication and protected routes.
-          </p>
-        </div>
-
-        <div className="about-item">
-          <div className="item-title">
-            <span>🚀</span>
-
             <h5>Product Mindset</h5>
           </div>
 
@@ -160,9 +144,9 @@ const MeComponents = ({}: IProps) => {
           </div>
 
           <p>
-            I led a <span className="highlight">12-person team at SEEF</span>{" "}
-            to build a React.js mentorship website, bringing together beginners
-            and experienced developers to deliver a working product.
+            I led a <span className="highlight">12-person team at SEEF</span> to
+            build a React.js mentorship website, bringing together beginners and
+            experienced developers to deliver a working product.
           </p>
         </div>
       </div>
@@ -229,8 +213,8 @@ const MeComponents = ({}: IProps) => {
         </p>
 
         <p>
-          <span className="highlight">Currently open to:</span>{" "}
-          Front-End Developer roles, freelance projects, startup collaborations, and
+          <span className="highlight">Currently open to:</span> Front-End
+          Developer roles, freelance projects, startup collaborations, and
           conversations with people interested in building and supporting new
           products.
         </p>

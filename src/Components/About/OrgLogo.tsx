@@ -10,6 +10,10 @@ export const logos = {
   depi: "DEPI.jpeg",
   route: "Route.jpeg",
   ccna: "CCNA.jpeg",
+  acpc: "acpc.jpeg",
+  ieee: "ieee.jpeg",
+  ieeeAlex: "alex.jpeg",
+  upwork: "upwork.jpeg",
 };
 
 export type LogoKey = keyof typeof logos;

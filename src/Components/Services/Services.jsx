@@ -24,7 +24,7 @@ const services = [
       "REST & GraphQL integration with Axios and TanStack Query",
       "Authentication with JWT and protected routes",
       "Scalable state management with Redux and Context API",
-      "Robust forms and validation with Yup and Regex",
+      "Robust forms and validation with Yup, Joi and Regex",
     ],
   },
   {
