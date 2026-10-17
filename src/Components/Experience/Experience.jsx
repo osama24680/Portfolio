@@ -27,6 +27,8 @@ import {
   SiReactquery,
   SiAxios,
   SiStrapi,
+  SiWordpress,
+  SiElementor,
 } from "react-icons/si";
 import { TbRegex, TbAtom2 } from "react-icons/tb";
 import {
@@ -105,6 +107,8 @@ const groups = [
       { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
       { name: "Sanity", Icon: SiSanity, color: "#F03E2F" },
       { name: "Strapi", Icon: SiStrapi, color: "#8E75FF" },
+      { name: "WordPress", Icon: SiWordpress, color: "#21759B" },
+      { name: "Elementor", Icon: SiElementor, color: "#E2498A" },
     ],
   },
   {

@@ -11,19 +11,23 @@ interface IJob {
   location: string;
   type: "Full-Time" | "Internship" | "Part-Time";
   points: string[];
+  stack?: string[];
 }
 
 const jobs: IJob[] = [
   {
-    company: "Ificra",
+    company: "iFikra",
     role: "Front-End Developer",
-    period: "Oct – Present",
+    period: "Oct 2026 – Present",
     location: "Alexandria",
     type: "Internship",
     points: [
       "Referred by a friend, then successfully passed the interview and technical assessment.",
-      "Solved real-world problems and delivered features as part of a professional team.",
+      "Building a bilingual (English / Arabic, RTL) dental platform — a patient-facing website and a clinic dashboard — with Next.js.",
+      "Shipped the Blog, Pricing, Testimonials and Appointment pages, fully localized with next-intl.",
+      "Building medical websites in WordPress with Elementor.",
     ],
+    stack: ["Next.js", "TypeScript", "Tailwind", "next-intl", "TanStack Query", "WordPress", "Elementor"],
   },
   {
     company: "Arabia IT",
@@ -86,6 +90,14 @@ const WorkExperienceComponent = ({}: IProps) => {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
+            )}
+
+            {job.stack && (
+              <div className="work_stack">
+                {job.stack.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
             )}
           </li>
         ))}
