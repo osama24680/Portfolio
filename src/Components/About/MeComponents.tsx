@@ -37,35 +37,37 @@ const MeComponents = ({}: IProps) => {
 
         <div className="experience-header">
           <div>
-            <h5>Front-End Developer</h5>
+            <h5>Front-End Developer · Intern</h5>
 
-            <span className="company-name">Arabia IT</span>
+            <span className="company-name">iFikra</span>
           </div>
 
-          <span className="experience-badge">Sep – Nov 2023</span>
+          <span className="experience-badge">Oct 2026 – Present</span>
         </div>
 
         <p>
-          Working as a{" "}
-          <span className="highlight">Front-End Developer at Arabia IT</span>{" "}
-          gave me valuable experience working in a real professional development
-          environment. It helped me move beyond academic projects and understand
-          what it takes to build and deliver software as part of a team.
+          I'm currently a{" "}
+          <span className="highlight">Front-End Developer at iFikra</span>,
+          building a bilingual (English / Arabic) dental platform with{" "}
+          <span className="highlight">Next.js, TypeScript, and Tailwind</span>{" "}
+          — from the patient-facing website to the clinic dashboard — alongside
+          medical websites in WordPress.
         </p>
 
         <p>
-          The experience strengthened my ability to{" "}
+          Working on a real product with a team means{" "}
           <span className="highlight">
-            solve problems, collaborate with developers, understand
-            requirements, and turn ideas into practical front-end solutions.
+            shipping through pull requests, building RTL-ready, localized
+            pages, and turning requirements into features people actually use.
           </span>
         </p>
 
         <p>
-          More importantly, it taught me to approach development with a
-          professional mindset — writing maintainable code, communicating
-          clearly, taking responsibility for my work, and continuously learning
-          from the people around me.
+          Before that, my time at{" "}
+          <span className="highlight">Arabia IT</span> moved me beyond
+          academic projects and taught me to approach development with a
+          professional mindset — maintainable code, clear communication, and
+          taking ownership of my work.
         </p>
       </div>
 
