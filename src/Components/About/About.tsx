@@ -4,6 +4,7 @@ import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 import { MdWorkOutline } from "react-icons/md";
+import { TbCertificate } from "react-icons/tb";
 import "./About.css";
 import { trackSpotlight } from "../../utils/spotlight.ts";
 import MeComponents from "./MeComponents.tsx";
@@ -11,6 +12,7 @@ import EducationComponent from "./EducationComponent.tsx";
 import VolunteeringComponent from "./VolunteeringComponent.tsx";
 import AsideComponent from "./AsideComponent.tsx";
 import WorkExperienceComponent from "./WorkExperienceComponent.tsx";
+import CertificatesComponent from "./CertificatesComponent.tsx";
 
 export default function About() {
   const [aboutData, setAboutData] = useState("EducationComponent");
@@ -66,6 +68,17 @@ export default function About() {
               <VscFolderLibrary className="about_icon" />
               <h5>Volunteering</h5>
             </article>
+
+            <article
+              className={`about_card lux_card ${aboutData === "CertificatesComponent" ? "active" : ""}`}
+              onMouseMove={trackSpotlight}
+              onClick={() => {
+                setAboutData("CertificatesComponent");
+              }}
+            >
+              <TbCertificate className="about_icon" />
+              <h5>Certificates</h5>
+            </article>
           </div>
           {aboutData == "MeComponents" && <MeComponents />}
           {aboutData == "WorkExperienceComponent" && (
@@ -73,6 +86,7 @@ export default function About() {
           )}
           {aboutData == "EducationComponent" && <EducationComponent />}
           {aboutData == "VolunteeringComponent" && <VolunteeringComponent />}
+          {aboutData == "CertificatesComponent" && <CertificatesComponent />}
         </div>
       </div>
     </section>

@@ -41,7 +41,18 @@ const jobs: IJob[] = [
     ],
   },
   {
-    company: "SEEF",
+    company: "Sidi Kerir Petrochemicals (SIDPEC)",
+    role: "Engineering Intern",
+    period: "Sep 2023",
+    location: "Alexandria",
+    type: "Internship",
+    points: [
+      "Industrial internship at SIDPEC facilities during my 3rd year of engineering.",
+      "Certified for exemplary performance in the program.",
+    ],
+  },
+  {
+    company: "SEFF — Software Engineering For Future",
     role: "Front-End Developer · Team Leader",
     period: "Jul – Sep 2023",
     location: "Remotely",

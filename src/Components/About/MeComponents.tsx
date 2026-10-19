@@ -146,7 +146,7 @@ const MeComponents = ({}: IProps) => {
           </div>
 
           <p>
-            I led a <span className="highlight">12-person team at SEEF</span> to
+            I led a <span className="highlight">12-person team at SEFF</span> to
             build a React.js mentorship website, bringing together beginners and
             experienced developers to deliver a working product.
           </p>

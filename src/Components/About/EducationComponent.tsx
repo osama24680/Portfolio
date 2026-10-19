@@ -26,16 +26,17 @@ const trainings: ITraining[] = [
   {
     icon: "🧪",
     logo: "instant",
-    title: "AI Diploma — Instant Software Solutions",
+    title: "Data Science & AI Diploma — Instant Software Solutions",
     period: "Aug 2024 – Jan 2025",
-    description: "Data Science, Machine Learning, and Deep Learning.",
+    description: "120-hour diploma: Data Science, Machine Learning, and Deep Learning.",
   },
   {
     icon: "📊",
     logo: "depi",
-    title: "Data Science — DEPI ",
+    title: "IBM Data Scientist — DEPI",
     period: "Apr – Oct 2024",
-    description: "Python, EDA, and Machine Learning through multiple projects.",
+    description:
+      "159-hour Digital Egypt Pioneers track by the Ministry of ICT: Python, EDA, and Machine Learning through multiple projects.",
   },
 
   {
@@ -48,8 +49,20 @@ const trainings: ITraining[] = [
   {
     icon: "🌐",
     logo: "ccna",
-    title: "CCNA",
-    description: "Networking fundamentals, routing, and switching.",
+    title: "CCNAv7: Introduction to Networks — Cisco",
+    period: "Oct 2023",
+    description: "Networking fundamentals, IPv4/IPv6 addressing, routing, and switching.",
+  },
+  {
+    icon: "💻",
+    title: "Front-End Diploma — SEFF",
+    period: "Dec 2022 – Mar 2023",
+    description: "4-month front-end web development diploma, graduated with a 99.38% score.",
+  },
+  {
+    icon: "🧑‍💻",
+    title: "ITIDA Gigs — Freelance Program",
+    description: "3-month freelance training program by ITIDA & EYouth.",
   },
   {
     icon: "⌨️",
