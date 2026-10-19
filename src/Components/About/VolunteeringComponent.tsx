@@ -63,6 +63,7 @@ const years: IYear[] = [
         title: "IEEE AAST Student Branch",
         role: "Web Developer & Graphic Designer",
         tag: "Tech",
+        achievement: "Organizing team · Experts Talk 2023",
       },
       {
         icon: "🏁",
@@ -106,6 +107,12 @@ const years: IYear[] = [
         title: "IEEE Alexandria Student Branch",
         role: "Machine Learning Member",
         tag: "Tech",
+      },
+      {
+        icon: "🏴‍☠️",
+        title: "RoboPirates Competition",
+        role: "Competitor with Team Sharks — AASTMT",
+        tag: "Competition",
       },
       {
         icon: "💼",

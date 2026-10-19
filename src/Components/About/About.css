@@ -6,8 +6,8 @@
 
 .about_cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
 }
 
 .about_card {
@@ -83,6 +83,11 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
 
+    }
+
+    /* five tabs on two columns: the last one takes the whole row */
+    .about_card:last-child {
+        grid-column: span 2;
     }
 
     .about_content {

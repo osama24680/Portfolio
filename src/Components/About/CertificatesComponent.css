@@ -1,0 +1,221 @@
+.certificates {
+    width: 100%;
+    margin: 35px auto 0;
+    padding: 40px;
+    text-align: left;
+    border-radius: 24px;
+}
+
+.certificates_intro h3 {
+    margin: 0 0 8px;
+    font-size: 1.65rem;
+    font-weight: 600;
+}
+
+.certificates_count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--colorLight);
+}
+
+.certificates_count svg {
+    font-size: 1rem;
+    color: var(--aqua);
+}
+
+/* ---------- Filters ---------- */
+.cert_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1.5rem 0;
+}
+
+.cert_filters button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    color: var(--colorLight);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    transition: var(--transition);
+}
+
+.cert_filters button span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    opacity: 0.7;
+}
+
+.cert_filters button:hover {
+    color: #fff;
+    border-color: rgba(var(--aqua-rgb), 0.4);
+}
+
+.cert_filters button.active {
+    color: var(--colorBg);
+    background: var(--grad-signature);
+    border-color: transparent;
+}
+
+/* ---------- Grid ---------- */
+/* flex instead of grid so a short last row sits centred, not left with holes */
+.cert_grid {
+    --cols: 3;
+    --gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.cert_card {
+    width: calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: zoom-in;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert_card:hover,
+.cert_card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(var(--aqua-rgb), 0.45);
+    box-shadow: 0 18px 40px rgba(var(--violet-rgb), 0.18);
+}
+
+.cert_thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 1.414;
+    overflow: hidden;
+    background: #fff;
+}
+
+.cert_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* portrait certificates sit whole inside the landscape frame */
+.cert_thumb img.portrait {
+    object-fit: contain;
+    background: #f4f6fb;
+}
+
+.cert_card:hover .cert_thumb img {
+    transform: scale(1.05);
+}
+
+.cert_body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 14px 14px;
+}
+
+.cert_meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.cert_category {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--violet-soft);
+}
+
+.cert_date {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    color: var(--colorLight);
+    white-space: nowrap;
+}
+
+.cert_body strong {
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cert_body small {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--colorLight);
+}
+
+.cert_highlight {
+    align-self: flex-start;
+    margin-top: 6px;
+    padding: 2px 8px;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    color: var(--aqua);
+    background: rgba(var(--aqua-rgb), 0.08);
+    border: 1px solid rgba(var(--aqua-rgb), 0.25);
+    border-radius: 6px;
+}
+
+.cert_verify {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: 0.78rem;
+    color: var(--colorBg);
+    white-space: nowrap;
+    background: var(--grad-signature);
+    border-radius: 999px;
+}
+
+/* =================== Media Quiry (Medium) ================= */
+@media(max-width:900px) {
+    .certificates {
+        padding: 30px;
+    }
+}
+
+/* =================== Media Quiry (phones) ================= */
+@media(max-width:600px) {
+    .certificates {
+        padding: 22px 16px;
+    }
+
+    .cert_grid {
+        --cols: 2;
+        --gap: 10px;
+    }
+
+    .cert_body {
+        padding: 10px;
+    }
+
+    .cert_meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+}
