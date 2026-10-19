@@ -244,6 +244,20 @@ img.edu_training_icon {
     color: var(--colorLight);
 }
 
+.edu_verify {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--aqua);
+}
+
+.edu_verify:hover {
+    color: var(--violet-soft);
+}
+
 /* =================== Media Quiry (Medium) ================= */
 @media(max-width:900px) {
     .education {

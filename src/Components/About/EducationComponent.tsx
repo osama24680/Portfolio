@@ -1,5 +1,6 @@
 import "./EducationComponent.css";
 import OrgLogo, { LogoKey } from "./OrgLogo";
+import { FiArrowUpRight } from "react-icons/fi";
 
 import { trackSpotlight } from "../../utils/spotlight";
 
@@ -11,6 +12,7 @@ interface ITraining {
   title: string;
   period?: string;
   description: string;
+  link?: string;
 }
 
 const trainings: ITraining[] = [
@@ -48,6 +50,14 @@ const trainings: ITraining[] = [
     logo: "ccna",
     title: "CCNA",
     description: "Networking fundamentals, routing, and switching.",
+  },
+  {
+    icon: "⌨️",
+    title: "Touch Typing — Typing.com",
+    period: "Sep – Oct 2026",
+    description:
+      "Passed the Beginner, Intermediate, and Advanced assessments with 98% accuracy.",
+    link: "https://www.typing.com/student/verify#428101425-163956856",
   },
 ];
 
@@ -130,6 +140,16 @@ const EducationComponent = ({}: IProps) => {
                 <h5>{t.title}</h5>
                 {t.period && <span className="edu_period">{t.period}</span>}
                 <p>{t.description}</p>
+                {t.link && (
+                  <a
+                    className="edu_verify"
+                    href={t.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Verify certificate <FiArrowUpRight />
+                  </a>
+                )}
               </div>
             </div>
           ))}
