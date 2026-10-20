@@ -75,7 +75,7 @@ export default function Header() {
             <a href="#contact" className="hero_btn hero_btn_primary" {...magnetic()}>
               Let's talk <FiArrowUpRight />
             </a>
-            <a href={CV} download className="hero_btn hero_btn_ghost" {...magnetic()}>
+            <a href={CV} download="Osama-Megahed-Frontend-CV.pdf" className="hero_btn hero_btn_ghost" {...magnetic()}>
               Download CV <FiDownload />
             </a>
           </div>

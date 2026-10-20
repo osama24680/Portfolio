@@ -30,6 +30,19 @@ const jobs: IJob[] = [
     stack: ["Next.js", "TypeScript", "Tailwind", "next-intl", "TanStack Query", "WordPress", "Elementor"],
   },
   {
+    company: "DevOra",
+    role: "Front-End Developer",
+    period: "Sep – Oct 2026",
+    location: "Remotely",
+    type: "Internship",
+    points: [
+      "Built the web front-end of Smart Laundry, a laundry ordering & delivery platform, in a cross-functional team with UI/UX, backend, Flutter, AI, and testing members.",
+      "Delivered the customer side (home, services & cart, order tracking, profile & addresses, AI assistant) and the admin dashboard (overview, orders, order details) across 8 merged pull requests.",
+      "Added route guards (protected / guest routes) and Zustand stores for auth and saved addresses.",
+    ],
+    stack: ["React 19", "TypeScript", "Vite", "Tailwind", "Zustand", "React Router", "TanStack Query"],
+  },
+  {
     company: "Arabia IT",
     role: "Front-End Developer",
     period: "Sep – Nov 2023",
