@@ -39,7 +39,7 @@ const buildCommands = (notify) => [
     run: () => {
       const a = document.createElement("a");
       a.href = CV;
-      a.download = "Osama-Megahed-CV.pdf";
+      a.download = "Osama-Megahed-Frontend-CV.pdf";
       a.click();
     },
   },

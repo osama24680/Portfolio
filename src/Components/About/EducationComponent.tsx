@@ -90,7 +90,7 @@ const EducationComponent = ({}: IProps) => {
           <span className="edu_school">
             Arab Academy for Science, Technology &amp; Maritime Transport (AAST)
           </span>
-          <span className="edu_period">Sep 2019 – Feb 2025</span>
+          <span className="edu_period">Sep 2019 – Jan 2025</span>
         </div>
       </article>
 

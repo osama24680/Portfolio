@@ -76,7 +76,7 @@ const AsideComponent = ({}: IProps) => {
               <small>TMDB endpoints</small>
             </div>
           </div>
-          <a href={CV} download className="outlineBtn profile_cv">
+          <a href={CV} download="Osama-Megahed-Frontend-CV.pdf" className="outlineBtn profile_cv">
             Download CV
           </a>
         </div>
