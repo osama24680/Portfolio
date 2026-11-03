@@ -2,6 +2,8 @@ import { useState } from "react";
 import { FiGithub, FiArrowUpRight } from "react-icons/fi";
 import { trackSpotlight } from "../../utils/spotlight";
 import taskflowCover from "../../assets/projects/taskflow.jpg";
+import cinaflixCover from "../../assets/projects/cinaflix.jpg";
+import foodawayCover from "../../assets/projects/foodaway.jpg";
 import "./Projects.css";
 
 // Covers are served from the old portfolio's Sanity CDN, resized on the fly.
@@ -33,7 +35,7 @@ const projects = [
     title: "CinaFlix",
     description:
       "A movie platform integrating 10 TMDB endpoints — search, categories, trending movies and series, with authentication and protected routes.",
-    cover: sanity("13bbfe03516ce2035f7cded66b6f9b9fc4452c0c-4000x2667.jpg"),
+    cover: cinaflixCover,
     tags: [
       "React",
       "React Router",
@@ -53,17 +55,17 @@ const projects = [
   {
     title: "FoodAway",
     description:
-      "A food app built with Next.js — SSR and SSG for SEO, NextAuth authentication, Stripe payments, and content managed in Sanity CMS.",
-    cover: sanity("0cb43bdc5850c9b8264deb341ad5e08cc9de2825-3376x2440.jpg"),
+      "A food ordering app built with Next.js — SSR and SSG for SEO, Route API authentication, Stripe checkout, a persisted Zustand cart, and content managed in Sanity CMS.",
+    cover: foodawayCover,
     tags: [
       "Next.js",
       "SSR & SSG",
-      "NextAuth",
+      "Route API",
       "Stripe",
       "Sanity CMS",
       "Zustand",
-      "Firebase",
-      "Mantine",
+      "Motion",
+      "Joi",
     ],
     category: "Next",
     live: "https://food-away.vercel.app/",
