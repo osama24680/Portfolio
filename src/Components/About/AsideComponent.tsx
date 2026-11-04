@@ -72,7 +72,7 @@ const AsideComponent = ({}: IProps) => {
               <small>ShoesFit funding</small>
             </div>
             <div>
-              <strong>10</strong>
+              <strong>12</strong>
               <small>TMDB endpoints</small>
             </div>
           </div>

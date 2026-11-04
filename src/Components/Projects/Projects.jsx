@@ -33,7 +33,7 @@ const projects = [
   {
     title: "CinaFlix",
     description:
-      "A movie platform integrating 10 TMDB endpoints — search, categories, trending movies and series, with authentication and protected routes.",
+      "A movie platform integrating 12 TMDB endpoints — search, categories, trending movies and series, with authentication and protected routes.",
     cover: cinaflixCover,
     tags: [
       "React",
