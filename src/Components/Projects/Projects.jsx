@@ -3,7 +3,8 @@ import { FiGithub, FiArrowUpRight } from "react-icons/fi";
 import { trackSpotlight } from "../../utils/spotlight";
 import taskflowCover from "../../assets/projects/taskflow.jpg";
 import cinaflixCover from "../../assets/projects/cinaflix.jpg";
-import foodawayCover from "../../assets/projects/foodaway.jpg";
+import freshcartCover from "../../assets/projects/freshcart.jpg";
+import vectosCover from "../../assets/projects/vectos.jpg";
 import "./Projects.css";
 
 // Covers are served from the old portfolio's Sanity CDN, resized on the fly.
@@ -51,23 +52,39 @@ const projects = [
   },
 
   {
-    title: "FoodAway",
+    title: "FreshCart — Grocery E-commerce",
     description:
-      "A food ordering app built with Next.js — SSR and SSG for SEO, Route API authentication, Stripe checkout, a persisted Zustand cart, and content managed in Sanity CMS.",
-    cover: foodawayCover,
+      "A grocery storefront on Next.js 16 and React 19 — server-side cached product and category data with \"use cache\", Suspense streaming, a hero carousel, deal banners and category browsing. Shop and auth pages are in progress.",
+    cover: freshcartCover,
     tags: [
-      "Next.js",
-      "SSR & SSG",
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "shadcn/ui",
+      "Embla Carousel",
       "Route API",
-      "Stripe",
-      "Sanity CMS",
-      "Zustand",
-      "Motion",
-      "Joi",
     ],
     category: "Next",
-    live: "https://food-away.vercel.app/",
-    github: "https://github.com/osama24680/FoodAway",
+    live: "https://fresh-cart-tau-liard.vercel.app",
+    github: "https://github.com/osama24680/FreshCart",
+  },
+  {
+    title: "Vectos — Smart-Shoe Health Platform",
+    description:
+      "The web platform of Vectos, our funded smart-shoe startup — a live dashboard streaming heart rate, SpO₂, temperature and fall detection from the shoe's sensors, connected to Flask ML models for calorie, stress and sleep predictions.",
+    cover: vectosCover,
+    tags: [
+      "React",
+      "Recharts",
+      "ThingSpeak API",
+      "Context API",
+      "Axios",
+      "Flask ML API",
+      "EmailJS",
+    ],
+    category: "React",
+    github: "https://github.com/osama24680/Vectos",
   },
   {
     title: "Vera",

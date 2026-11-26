@@ -57,6 +57,23 @@
     flex-direction: column;
 }
 
+/* an odd card left alone in the last row spans the full width,
+   with the cover beside the text so it stays the same height as the others */
+.project_card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+
+.project_card:last-child:nth-child(odd) .project_cover {
+    flex: 0 0 50%;
+    aspect-ratio: auto;
+    min-height: 100%;
+}
+
+.project_card:last-child:nth-child(odd) .project_body {
+    justify-content: center;
+}
+
 /* ---------- Cover ---------- */
 .project_cover {
     position: relative;
@@ -90,6 +107,11 @@
     line-height: 1;
     color: #fff;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    /* readable on light screenshots too */
+    padding: 6px 10px;
+    background: rgba(10, 12, 28, 0.55);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
 }
 
 /* ---------- Body ---------- */
@@ -164,6 +186,16 @@
 
 /* =================== Media Quiry (phones) ================= */
 @media(max-width:600px) {
+    .project_card:last-child:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .project_card:last-child:nth-child(odd) .project_cover {
+        flex: none;
+        aspect-ratio: 16 / 10;
+        min-height: 0;
+    }
+
     .projects_grid {
         grid-template-columns: minmax(0, 1fr);
     }
